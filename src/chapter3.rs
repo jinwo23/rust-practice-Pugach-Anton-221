@@ -1,6 +1,6 @@
 /// https://practice.course.rs/variables.html
 #[test] 
-fn test31() {
+fn test1() {
     let x: i32 = 5; // Uninitialized but used, ERROR !
     let _y: i32; // Uninitialized but also unused, only a Warning !
 
@@ -11,7 +11,7 @@ fn test31() {
 #[test]
 
 // Fill the blanks in the code to make it compile
-fn test32() {
+fn test2() {
     let mut x = 1;
     x += 2; 
     
@@ -23,7 +23,7 @@ fn test32() {
 
 
 // Fix the error below with least amount of modification
-fn test33() {
+fn test3() {
     let x: i32 = 10;
      let y: i32 = 5;
     {
@@ -37,7 +37,7 @@ fn test33() {
 
 
 // Fix the error with the use of define_x
-fn test34()
+fn test4()
 {let x = "hello";
     println!("{}, world", x); 
 }
@@ -50,7 +50,7 @@ fn define_x() {
 
 
 // Only modify `assert_eq!` to make the `println!` work(print `42` in terminal)
-fn test35() {
+fn test5() {
     let x: i32 = 5;
     {
         let x = 12;
@@ -67,7 +67,7 @@ fn test35() {
 
 
 // Remove a line in the code to make it compile
-fn test36() {
+fn test6() {
     let mut x: i32 = 1;
     x = 7;
     // Shadowing and re-binding
@@ -85,7 +85,7 @@ fn test36() {
 #[test]
 
 
-fn test37() {
+fn test7() {
     let mut x = 1; 
        println!("The value of x is: {}", x);
 }
@@ -94,7 +94,7 @@ fn test37() {
 
 
 // Fix the error below with least amount of modification
-fn test38() {
+fn test8() {
     let (mut x, y) = (1, 2);
     x += 2;
 
@@ -107,7 +107,7 @@ fn test38() {
 #[test]
 
 
-fn test39() {
+fn test9() {
     let (x, y);
     (x,..) = (3, 4);
     [.., y] = [1, 2];
