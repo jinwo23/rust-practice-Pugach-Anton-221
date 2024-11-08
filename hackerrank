@@ -1,1 +1,138 @@
+Simple Array Sum
+// https://www.hackerrank.com/challenges/simple-array-sum/problem
+
+use std::env;
+use std::fs::File;
+use std::io::{self, BufRead, Write};
+
+/*
+ * Complete the 'simpleArraySum' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY ar as parameter.
+ */
+
+fn simpleArraySum(ar: &[i32]) -> i32 {
+    ar.iter().sum()  // Sum all elements in the array
+}
+
+fn main() {
+    let stdin = io::stdin();
+    let mut stdin_iterator = stdin.lock().lines();
+
+    let mut fptr = File::create(env::var("OUTPUT_PATH").unwrap()).unwrap();
+
+    let _ar_count = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+
+    let ar: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+        .trim_end()
+        .split(' ')
+        .map(|s| s.to_string().parse::<i32>().unwrap())
+        .collect();
+
+    let result = simpleArraySum(&ar);
+
+    writeln!(&mut fptr, "{}", result).ok();
+}
+
+Compare the Triplets
+
+//https://www.hackerrank.com/challenges/compare-the-triplets/problem
+
+use std::env;
+use std::fs::File;
+use std::io::{self, BufRead, Write};
+
+/*
+ * Complete the 'compareTriplets' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY a
+ *  2. INTEGER_ARRAY b
+ */
+
+fn compareTriplets(a: &[i32], b: &[i32]) -> Vec<i32> {
+    let mut scores = vec![0, 0]; // Initialize scores for a and b
+
+    // Compare corresponding elements of a and b
+    for i in 0..a.len() {
+        if a[i] > b[i] {
+            scores[0] += 1; // Increment score for a
+        } else if a[i] < b[i] {
+            scores[1] += 1; // Increment score for b
+        }
+    }
+
+    scores // Return the scores vector
+}
+
+fn main() {
+    let stdin = io::stdin();
+    let mut stdin_iterator = stdin.lock().lines();
+
+    let mut fptr = File::create(env::var("OUTPUT_PATH").unwrap()).unwrap();
+
+    let a: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+        .trim_end()
+        .split(' ')
+        .map(|s| s.to_string().parse::<i32>().unwrap())
+        .collect();
+
+    let b: Vec<i32> = stdin_iterator.next().unwrap().unwrap()
+        .trim_end()
+        .split(' ')
+        .map(|s| s.to_string().parse::<i32>().unwrap())
+        .collect();
+
+    let result = compareTriplets(&a, &b);
+
+    for i in 0..result.len() {
+        write!(&mut fptr, "{}", result[i]).ok();
+
+        if i != result.len() - 1 {
+            write!(&mut fptr, " ").ok();
+        }
+    }
+
+    writeln!(&mut fptr).ok();
+}
+
+A Very Big Sum
+
+//https://www.hackerrank.com/challenges/a-very-big-sum/problem
+
+use std::env;
+use std::fs::File;
+use std::io::{self, BufRead, Write};
+
+/*
+ * Complete the 'aVeryBigSum' function below.
+ *
+ * The function is expected to return a LONG_INTEGER.
+ * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+ */
+
+fn aVeryBigSum(ar: &[i64]) -> i64 {
+    ar.iter().sum() // Sum all elements in the array
+}
+
+fn main() {
+    let stdin = io::stdin();
+    let mut stdin_iterator = stdin.lock().lines();
+
+    let mut fptr = File::create(env::var("OUTPUT_PATH").unwrap()).unwrap();
+
+    let _ar_count = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+
+    let ar: Vec<i64> = stdin_iterator.next().unwrap().unwrap()
+        .trim_end()
+        .split(' ')
+        .map(|s| s.to_string().parse::<i64>().unwrap())
+        .collect();
+
+    let result = aVeryBigSum(&ar);
+
+    writeln!(&mut fptr, "{}", result).ok();
+}
 
