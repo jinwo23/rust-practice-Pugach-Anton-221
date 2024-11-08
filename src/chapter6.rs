@@ -1,5 +1,7 @@
-/// https://practice.course.rs/compound-types/string.html
-#[test]
-fn test61() {
+Chapter 6.1
 
+fn test1() {
+    let s: &str = "hello, world";
+
+    println!("Success!");
 }
